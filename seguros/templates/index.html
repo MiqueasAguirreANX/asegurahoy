@@ -1,0 +1,195 @@
+{% load static %}
+{% load seguros_filters %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <link rel="stylesheet" href="{% static 'css/form.css' %}">
+        <link rel="stylesheet" href="{% static 'css/links.css' %}">
+        <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+        <link rel="stylesheet" href="{% static 'css/helpers.css' %}">
+        <link rel="stylesheet" href="{% static 'css/second-page.css' %}">
+        <link rel="stylesheet" href="{% static 'css/third-page.css' %}">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        {% block css %}
+        {% endblock %}
+        <title>AseguroHoy.com</title>
+    </head>
+    <body>
+        <!-- <a class="floating-whatsapp">
+            <img src="{% static 'icons/WhatsApp_icon.png' %}" alt="whatsapp">
+        </a> -->
+        {% include 'include/navbar.html' %}
+        <main>
+            {% block main %}
+            {% endblock %}
+            <br>
+            <br>
+        </main>
+        <div class="top-logos">
+            <span>
+                <img src="{% static 'icons/triunfo pnb.png' %}" alt="triunfo">
+            </span>
+            <span>
+                <img src="{% static 'icons/Orbis png.png' %}" alt="orbis">
+            </span>
+            <span>
+                <img src="{% static 'icons/RUS.png' %}" alt="rus">
+            </span>
+            <span>
+                <img src="{% static 'icons/caledonia png.png' %}" alt="caledonia">
+            </span>
+            <span>
+                <img src="{% static 'icons/Rivadavia png.png' %}" alt="rivadavia">
+            </span>
+        </div>
+        <br>
+        <div class="sides second-page">
+            <div class="left">
+                <div class="top-title">
+                    ¿Porque elegirnos?
+                </div>
+                <p>
+                    Contamos con la más alta tecnología para mantener tu seguro al día.
+                </p>
+                <p>
+                    Recibí tu póliza a tu celular cuando se renueve, de esa manera, nunca tendrás tu documentación vencida.
+                </p>
+                <p>
+                    Asesoramiento y acompañamiento en caso de algún improvisto.
+                </p>
+                <p>
+                    Descuentos especiales en pagos con tarjeta de Crédito, Débito o CBU.
+                </p>
+                <p>
+                    Poder contratar tu póliza para pagos en efectivo mensual en cualquier Rapi Pago, Pago Fácil, Cobro Express, etc.
+                </p>
+                <br>
+                <br>
+                <div class="top-title">
+                    Contrata tu póliza hoy
+                </div>
+                <div>
+                    <div class="list-number">1-Carga tus datos.</div>
+                    <div>Completa el formulario de lo que queres asegurar</div>
+                </div>
+                <div>
+                    <div class="list-number">2-Recibi asesoramiento.</div>
+                    <div>
+                        Un asesor te brindará una variedad de coberturas
+                        para que puedas decidir.
+                    </div>
+                </div>
+                <div>
+                    <div class="list-number">3-Contrata online.</div>
+                    <div>
+                        Se carga el medio de pago con el que deseas
+                        abonar y se te brindará tu póliza de seguros.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="white-third-page-separator">
+            <img src="{% static 'icons/LOGO PNG.png' %}" alt="logo">
+        </div>
+        <div class="sides third-page">
+            <div class="left">
+                <div class="top-title">
+                    Ventajas de contratar en AseguraHoy
+                </div>
+                <p>
+                    Un Asesor te brindara las mejores opciones para vos y tus bienes, de esa forma, vas a poder informarte y saldar todas tus dudas antes de contratar tu póliza.
+                </p>
+                <p>
+                    Contamos con una linea activa las 24hs para que puedas contactarnos de forma directa y sin necesidad de aguardar en linea.
+                </p>
+                <p>
+                    Contamos con tecnología post venta, priorizando siempre el trato directo con el cliente.
+                </p>
+            </div>
+            <div class="right">
+                <div class="top-title">
+                    CENTRO DE ATENCIÓN
+                </div>
+                <div>
+                    <div class="list-image">
+                        <img src="{% static 'third-page/location.png' %}" alt="direccion">
+                    </div>
+                    <div>
+                        <p>DIRECCIÓN</p>
+                        <p>Rivadavia 272 - San Martin, Mendoza.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="list-image">
+                        <img src="{% static 'third-page/llamada.png' %}" alt="llamada">
+                    </div>
+                    <div>
+                        <p>TELÉFONO / WHATSAPP</p>
+                        <p>2634-32 32 32</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="list-image">
+                        <img src="{% static 'third-page/reloj.png' %}" alt="reloj">
+                    </div>
+                    <div>
+                        <p>HORARIOS</p>
+                        <p>
+                            Lunes a Viernes. 09:00 - 20:00<br>
+                            Sabado. 09:00 - 13:00
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="three-sides">
+            <div class="social-side">
+                <span>
+                    <img src="{% static 'icons/LOGO PNG.png' %}" alt="logo">
+                    <img src="{% static 'icons/logotipo.png' %}" alt="logo">
+                </span>
+                <span>Seguinos en nuestras redes.</span>
+                <span>
+                    <img src="{% static 'icons/facebook.png' %}" alt="facebook">
+                    <img src="{% static 'icons/instagram.png' %}" alt="instagram">
+                    <img src="{% static 'icons/whatsapp.png' %}" alt="whatsapp">
+                </span>
+            </div>
+            <div class="info-side">
+                AseguraHoy desempeña funciones de productor asesor de seguros conforme a la Ley 22.400, no
+                revistiendo el carácter de compañía de seguros y se encuentra registrada con Matrícula 90.161, expedida
+                por la Superintendencia de Seguros de la Nación. (<a href="www.ssn.gov.ar">www.ssn.gov.ar</a>)<br><br>
+                <a href="www.asegurahoy.com">www.asegurahoy.com</a> es una marca bajo licencia de su titular, Sr. Benjamín Sevilla. Todos los nombres y
+                productos mencionados son marcas registradas de su respectivo dueño.
+            </div>
+            <div class="qr-side">
+                <div class="qr">
+                    <img src="{% static 'icons/QR.png' %}" alt="QR">
+                    <div>
+                        <p>Certificado de Aptitud para el Ofrecimiento Público de Contratos de Seguros (CAOPCS)</p>
+                        <img src="{% static 'icons/LogoSSN.png' %}" alt="SSN">
+
+                        <div class="bottom-terms">
+                            <p>AseguraHoy.com &copy; 2022 Todos los derechos reservados</p>
+                            <p>
+                                <a href="{% url 'seguros:terms' %}">Términos y Condiciones</a>
+                                <a href="{% url 'seguros:privacidad' %}">Privacidad</a>
+                            </p>
+                        </div>
+                    </div>
+                   
+                </div>
+                
+            </div>
+        </div>
+    
+    {% block js_scripts %}
+    {% endblock %}
+    </body>
+</html>

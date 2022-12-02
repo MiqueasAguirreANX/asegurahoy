@@ -1,0 +1,40 @@
+{% extends "index.html" %}
+{% load static %}
+{% load seguros_filters %}
+
+{% block css %}
+<style>
+    .success-user-container .form-container a {
+        width: 130px;
+        margin-left: calc(100% - 150px);
+        padding: 5px 10px;
+        font-size: 14px;
+        border-radius: 15px;
+        background-color: var(--primary);
+        color: white;
+        /* transform: translateY(-45px); */
+        border: none;
+    }
+    
+</style>
+{% endblock %}
+
+{% block main %}
+    <div class="success-user-container">
+        <div class="form-container">
+            <form>
+                <h2>¡Gracias por contactarnos!</h2>
+                <p>En breve, un asesor se comunicará con usted</p>
+                <a href="/">Finalizar</a>
+            </form>
+            <div class="image-container">
+                <div class="image-text">
+                    {{tipo|image_text_filter|safe}}
+                </div>
+                <div class="image">
+                    <img src="{% static 'publicidad/'|add:tipo|add:'.png' %}" alt="{{tipo}}">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

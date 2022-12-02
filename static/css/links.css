@@ -1,0 +1,35 @@
+.navbar .links {
+    padding: 25px 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.navbar .links a {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+    max-width: 85px;
+    margin: 0px 5px;
+    height: 100%;
+}
+
+.navbar .links a > span {
+    font-family: 'Swis721 Blk BT';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    text-align: center;
+    color: gray;
+}
+
+.navbar .links a span > img {
+    width: 64px;
+    height: 64px;
+}

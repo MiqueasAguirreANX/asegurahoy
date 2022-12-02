@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+{% load static %}
+{% load seguros_filters %}
+
+{% block main %}
+    <div 
+        class="form active"
+        id="form-{{tipo}}"
+        >   
+        <form tipo="{{tipo}}" id="account-form" method="POST" action="{% url 'seguros:guardar-account' %}">
+            {% csrf_token %}
+            <div class="form-container">
+                {{ account_form.as_div }}
+            </div>
+            <button>Siguiente</button>
+        </form>
+        <div class="image-container">
+            <div class="image-text">
+                {{tipo|image_text_filter|safe}}
+            </div>
+            <div class="image">
+                <img src="{% static 'publicidad/'|add:tipo|add:'.png' %}" alt="{{tipo}}">
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block js_scripts %}
+<script src="{% static 'js/account-form.js' %}"></script>
+{% endblock %}

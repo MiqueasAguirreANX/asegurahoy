@@ -1,0 +1,254 @@
+
+form input, form select {
+    font-family: 'Corbel';
+    font-style: normal;
+    font-weight: 400;
+}
+
+form label {
+    font-family: 'Days One';
+    font-style: normal;
+    font-weight: 800;
+}
+
+#data-form {
+    display: block;
+}
+
+#data-form button {
+    width: 130px;
+    margin-left: calc(100% - 150px);
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 15px;
+    background-color: var(--primary);
+    color: white;
+    transform: translateY(-45px);
+    border: none;
+}
+
+#account-form button {
+    width: 130px;
+    margin-left: calc(100% - 150px);
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 15px;
+    background-color: var(--primary);
+    color: white;
+    transform: translateY(-45px);
+    border: none;
+}
+
+form button {
+    align-self: end;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+.form-container {
+    background-color: white;
+    box-shadow: 0px 7px 5px 1px rgba(161, 161, 161, 0.74);
+    border-radius: 20px;
+    border-top-right-radius: 120px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* grid-template-rows: minmax(100px, 125px); */
+    grid-auto-rows: 80px;
+    grid-column-gap: 20px;
+    grid-row-gap: 10px;
+    padding: 40px;
+    padding-bottom: 70px;
+    height: 100%;
+}
+
+.form-container .form-elem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 70px;
+}
+
+.form-container .form-elem > * {
+    width: 100%;
+    display: block;
+}
+
+
+
+.form-container .form-elem input,
+.form-container .form-elem select
+{
+    background-color: var(--gray-form-input);
+    border-radius: 5px;
+    padding: 3px;
+    color: var(--primary);
+    border: 1px solid var(--gray-form-input)!important;
+}
+.form-container .form-elem input {
+    padding: 5px;
+}
+
+.form-container .form-elem input :focus {
+    border: 1px solid var(--gray-form-input)!important;
+}
+
+.form-container .form-elem {
+    grid-column: 1/ span 4;
+}
+
+#form-auto .form-container .form-elem:first-of-type {
+    grid-column: 1/ span 2;
+}
+
+#form-auto .form-container .form-elem:nth-of-type(2) {
+    grid-column: 3/ span 2;
+}
+
+#id_gnc {
+    width: 30px;
+    align-self: flex-start;
+    transform: translateY(5px);
+    height: 20px;
+}
+
+#id_cero_km {
+    width: 30px;
+    align-self: flex-start;
+    transform: translateY(5px);
+    height: 20px;
+}
+
+#form-moto .form-container .form-elem:first-of-type {
+    grid-column: 1/ span 2;
+}
+
+#form-moto .form-container .form-elem:nth-of-type(2) {
+    grid-column: 3/ span 2;
+}
+
+.form-container .form-elem:has(#id_marca),
+.form-container .form-elem:has(#id_año) {
+    grid-column-start: auto;
+    grid-column-end: span 2;
+}
+
+.form-container .form-elem:has(#id_año) {
+    width: calc(100% - 50px);
+}
+
+#form-auto .form-container .form-elem:nth-last-child(-n + 3) {
+    grid-column-start: auto;
+    grid-column-end: span 1;
+}
+
+.form-container .form-elem:has(#id_uso),
+.form-container .form-elem:has(#id_gnc),
+.form-container .form-elem:has(#id_radio),
+.form-container .form-elem:has(#id_cero_km) {
+    grid-column-start: auto;
+    grid-column-end: span 1;
+}
+
+.form-container .form-elem:has(#id_marca_modelo_acoplado),
+.form-container .form-elem:has(#id_año_acoplado) {
+    grid-column-start: auto;
+    grid-column-end: span 2;
+}
+
+
+#form-moto .form-container .form-elem:nth-last-child(-n + 2) {
+    grid-column-start: auto;
+    grid-column-end: span 1;
+}
+
+#bici-select {
+    width: calc(100% - 50px);
+    align-self: start;
+}
+
+.image-container {
+    padding: 25px 80px;
+}
+
+.image-container .image-text {
+    font-weight: 900;
+    font-family: 'Copse';
+    font-size: 30px;
+    color: #111;
+}
+
+.image-container .image {
+    padding-top: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-container .image img {
+    max-width: 400px;
+}
+
+#form-comercio .form-container {
+    grid-template-columns: 1fr 1fr!important;
+}
+
+#form-comercio .form-container .form-elem {
+    grid-column-start: auto;
+    grid-column-end: span 1; 
+}
+
+#form-comercio .form-container .form-elem:nth-of-type(2) {
+    width: calc(100% - 50px);
+}
+
+#form-hogar .form-container {
+    grid-template-columns: 1fr 1fr!important;
+}
+
+#form-hogar .form-container .form-elem {
+    grid-column-start: auto;
+    grid-column-end: span 1; 
+}
+
+#form-hogar .form-container .form-elem:nth-of-type(2) {
+    width: calc(100% - 50px);
+}
+.bici-elem:has(#id_año) {
+    grid-column-start: 3!important;
+    grid-column-end:  span 2!important;
+    width: 100%!important;
+}
+
+.bici-elem:has(#id_marca_modelo) {
+    grid-row-start: 2!important;
+    grid-column-start: 1!important;
+    grid-column-end:  span 2!important;
+}
+
+.bici-elem {
+    grid-column-start: auto!important;
+    grid-column-end: span 2!important;
+}
+
+
+.monopatin-elem:has(#id_año) {
+    grid-column-start: 3!important;
+    grid-column-end:  span 2!important;
+    width: 100%!important;
+}
+
+.monopatin-elem:has(#id_marca_modelo) {
+    grid-row-start: 2!important;
+    grid-column-start: 1!important;
+    grid-column-end:  span 2!important;
+}
+.monopatin-elem {
+    grid-column-start: auto!important;
+    grid-column-end: span 2!important;
+}
+

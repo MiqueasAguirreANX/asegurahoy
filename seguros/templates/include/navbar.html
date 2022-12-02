@@ -1,0 +1,107 @@
+{% load static %}
+<nav class="navbar">
+    <div class="brand">
+        <span>
+            <img src="{% static 'icons/LOGO PNG.png' %}" alt="logo">
+            <img src="{% static 'icons/logotipo.png' %}" alt="logo">
+        </span>
+    </div>
+    <div class="links">
+        <a href="{% url 'seguros:tipo-form' %}?tipo=auto">
+            <span>
+                <img src="{% static 'icons/Auto.png' %}" alt="auto">
+            </span>
+            <span>
+                Auto
+            </span>
+        </a>
+        <a href="{% url 'seguros:tipo-form' %}?tipo=moto">
+            <span>
+                <img src="{% static 'icons/Moto.png' %}" alt="moto">
+            </span>
+            <span>
+                Moto
+            </span>
+        </a>
+        <a href="{% url 'seguros:tipo-form' %}?tipo=camion">
+            <span>
+                <img src="{% static 'icons/Camion.png' %}" alt="camion">
+            </span>
+            <span>
+                Camion
+            </span>
+        </a>
+        <a href="{% url 'seguros:tipo-form' %}?tipo=flota">
+            <span>
+                <img src="{% static 'icons/Flota.png' %}" alt="flota">
+            </span>
+            <span>
+                Flota
+            </span>
+        </a>
+        <a href="{% url 'seguros:tipo-form' %}?tipo=bici">
+            <span>
+                <img src="{% static 'icons/Bici.png' %}" alt="bici">
+            </span>
+            <span>
+                Bici
+            </span>
+        </a>
+        <a href="{% url 'seguros:tipo-form' %}?tipo=hogar">
+            <span>
+                <img src="{% static 'icons/Hogar.png' %}" alt="hogar">
+            </span>
+            <span>
+                Hogar
+            </span>
+        </a>
+        <a href="{% url 'seguros:tipo-form' %}?tipo=comercio">
+            <span>
+                <img src="{% static 'icons/Comercio.png' %}" alt="comercio">
+            </span>
+            <span>
+                Comercio
+            </span>
+        </a>
+        <a href="{% url 'seguros:tipo-form' %}?tipo=celular">
+            <span>
+                <img src="{% static 'icons/CelularProtegido.png' %}" alt="celular">
+            </span>
+            <span>
+                Celular
+            </span>
+        </a>
+        <a href="{% url 'seguros:tipo-form' %}?tipo=accidentes">
+            <span>
+                <img src="{% static 'icons/AP.png' %}" alt="accidentes">
+            </span>
+            <span>
+                Accidentes
+            </span>
+        </a>
+        <a href="{% url 'seguros:tipo-form' %}?tipo=vida">
+            <span>
+                <img src="{% static 'icons/Vida.png' %}" alt="vida">
+            </span>
+            <span>
+                Vida
+            </span>
+        </a>
+        <a href="{% url 'seguros:tipo-form' %}?tipo=praxis_medica">
+            <span>
+                <img src="{% static 'icons/PraxisMedica.png' %}" alt="praxis medica">
+            </span>
+            <span>
+                Praxis Medica
+            </span>
+        </a>
+        <a href="{% url 'seguros:tipo-form' %}?tipo=caucion">
+            <span>
+                <img src="{% static 'icons/Caucion.png' %}" alt="caución">
+            </span>
+            <span>
+                Caución
+            </span>
+        </a>
+    </div>
+</nav>

@@ -1,0 +1,70 @@
+{% extends "index.html" %}
+{% load static %}
+{% load seguros_filters %}
+
+{% block main %}
+    <div 
+        class="form active"
+        id="form-{{tipo}}"
+        >   
+        <form tipo="{{tipo}}" id="data-form" method="POST" action="{% url 'seguros:guardar-seguro' %}?tipo={{tipo}}">
+            {% csrf_token %}
+            <div class="form-container">
+                {% if tipo == "bici" %}
+                    <div class="form-elem">
+                        <label>Tipo</label>
+                        <select name="tipo-bici" id="bici-select">
+                            <option value="bici">Bicicleta</option>
+                            <option value="monopatin">Monopatin</option>
+                        </select>
+                    </div>
+                    {% for fm in bici_form %}
+                    <div class="form-elem bici-elem">
+                        <label>{{fm.label}}</label>
+                        {{fm}}
+                    </div>
+                    {% endfor %}
+
+                    {% for fm in monopatin_form %}
+                    <div class="form-elem monopatin-elem">
+                        <label>{{fm.label}}</label>
+                        {{fm}}
+                    </div>
+                    {% endfor %}
+                    
+                {% endif %}
+                {% for fm in form %}
+                    <div class="form-elem">
+                        <label>{{fm.label}}</label>
+                        {{fm}}
+                    </div>
+                {% endfor %}
+                
+            </div>
+            <button>Siguiente</button>
+        </form>
+        <div class="image-container">
+            <div class="image-text">
+                {{tipo|image_text_filter|safe}}
+            </div>
+            <br>
+            <div class="image">
+                <img src="{% static 'publicidad/'|add:tipo|add:'.png' %}" alt="{{tipo}}">
+            </div>
+        </div>
+        
+    </div>
+{% endblock %}
+
+{% block js_scripts %}
+<script src="{% static 'js/seguros-form.js' %}"></script>
+{% if tipo == "auto" %}
+<script src="{% static 'js/modelo-version.js' %}"></script>
+{% elif tipo == "moto" %}
+<script src="{% static 'js/modelo-version.js' %}"></script>
+{% elif tipo == "camion" %}
+<script src="{% static 'js/modelo-version.js' %}"></script>
+{% endif %}
+
+<script src="{% static 'js/'|add:tipo|add:'-form.js' %}"></script>
+{% endblock %}

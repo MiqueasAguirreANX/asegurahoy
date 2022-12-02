@@ -1,0 +1,46 @@
+:root {
+    --primary: #067B7F;
+    --gray-form-input: #D9D9D9;
+    --background-gray: #EEEEEE;
+}
+
+main {
+    width: 100%;
+    padding: 20px;
+}
+
+* {
+    font-size: 20px;
+}
+
+body {
+    background-color: var(--background-gray);
+}
+
+.fixed-container {
+    height: 73vh;
+    overflow-y: scroll;
+}
+
+
+
+.bg-primary {
+    background-color: var(--primary)!important;
+    color: white;
+}
+
+.text-primary {
+    color: var(--primary)!important;
+    background-color: white;
+}
+
+/* .floating-whatsapp {
+    display: block;
+    position: fixed;
+    z-index: 10000;
+    width: 64px;
+    height: 64px;
+    bottom: 30px;
+    right: 30px;
+} */
+
