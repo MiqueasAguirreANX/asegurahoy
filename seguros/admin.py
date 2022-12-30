@@ -22,3 +22,4 @@ admin.site.register(models.VidaSeguro)
 
 
 admin.site.register(models.Terms)
+admin.site.register(models.Privacidad)
