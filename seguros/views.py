@@ -37,6 +37,9 @@ def home(request):
 def terms(request):
     return render(request, "terms.html", {"terms": models.Terms.objects.all().first()})
 
+def privacidad(request):
+    return render(request, "privacidad.html", {"privacidad": models.Privacidad.objects.all().first()})
+
 def home(request):
     return redirect(reverse("seguros:tipo-form")+"?tipo=auto")
 

@@ -8,6 +8,10 @@ class Terms(models.Model):
     terms = models.TextField(blank=True, null=True)
     updated = models.DateTimeField(auto_now=True)
 
+class Privacidad(models.Model):
+    privacidad = models.TextField(blank=True, null=True)
+    updated = models.DateTimeField(auto_now=True)
+
 class Account(models.Model):
     cod_postal          = models.CharField(max_length=20)
     nombre              = models.CharField(max_length=250)
