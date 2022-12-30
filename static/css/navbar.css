@@ -15,13 +15,13 @@
 }
 
 .navbar .brand > span > img:first-of-type {
-    width: 64px;
-    height: 64px;
+    width: 48px;
+    height: 48px;
 }
 
 .navbar .brand > span > img:last-of-type {
-    width: 250px;
-    height: 48px;
+    width: 200px;
+    height: 36px;
 }
 
 .navbar .brand > span {

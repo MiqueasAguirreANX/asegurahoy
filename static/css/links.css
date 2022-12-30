@@ -1,5 +1,5 @@
 .navbar .links {
-    padding: 25px 0px;
+    padding: 10px 0px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -15,9 +15,20 @@
     justify-content: center;
     text-decoration: none;
     color: black;
-    max-width: 85px;
+    max-width: 75px;
     margin: 0px 5px;
     height: 100%;
+    transition: all 500ms ease;
+}
+
+@media screen and (max-width: 767px) {
+    .navbar .links {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        overflow-x: scroll;
+    }
 }
 
 .navbar .links a > span {
@@ -27,9 +38,14 @@
     font-size: 15px;
     text-align: center;
     color: gray;
+    
+}
+
+.navbar .links a:hover {
+    text-decoration: underline;
 }
 
 .navbar .links a span > img {
-    width: 64px;
-    height: 64px;
+    width: 48px;
+    height: 48px;
 }

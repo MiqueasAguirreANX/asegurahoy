@@ -6,11 +6,11 @@
 
 main {
     width: 100%;
-    padding: 20px;
+    padding: 10px 20px;
 }
 
 * {
-    font-size: 20px;
+    font-size: 16px;
 }
 
 body {
@@ -44,3 +44,6 @@ body {
     right: 30px;
 } */
 
+form button {
+    cursor: pointer;
+}

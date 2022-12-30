@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 import uuid
 from seguros import forms
@@ -32,8 +32,13 @@ TIPO_MODEL_MAP = {
 }
 
 def home(request):
-    context = {}
-    return render(request, "home.html", context)
+    return redirect(reverse("seguros:tipo-form"))
+
+def terms(request):
+    return render(request, "terms.html", {"terms": models.Terms.objects.all().first()})
+
+def home(request):
+    return redirect(reverse("seguros:tipo-form")+"?tipo=auto")
 
 def tipo_form(request):
     context = {}
@@ -59,26 +64,73 @@ def tipo_form(request):
     return render(request, "seguros/form.html", context)
 
 
-def guardar_seguro(request):
-    if request.method == "POST":
+class GuardarSeguro(APIView):
+
+    def get(self, request, *args, **kwargs):
+        if models.UserSeguro.objects.filter(uuid=request.session["uuid"]).exists():
+            return render(request, "seguros/account-form.html", {
+                "tipo": request.session["tipo"],
+                "account_form": forms.AccountForm(),
+            })
+        else:
+            return redirect("/")
+
+    def post(self, request, *args, **kwargs):
         tipo = request.GET.get("tipo", None)
         if not tipo or tipo not in list(TIPO_FORM_MAP.keys()):
             messages.error(request, "Tipo de seguro invalido")
             return redirect("/")
 
         request.session["tipo"] = tipo
-
+        print(tipo)
         if tipo == "flota":
-            for auto in request.POST.get("autos"):
+            print(request.data)
+            cantidad = request.data.get("cantidad")
+            try:
+                cantidad = int(cantidad)
+            except Exception as err:
+                messages.error(request, str(err))
+                return Response(data={
+                    "status": "error",
+                    "message": str(err)
+                }, status=400)
+
+            if cantidad < 1:
+                messages.error(request, "Cantidad de flota invalida")
+                return Response(data={
+                    "status": "error",
+                    "message": "Cantidad de flota invalida"
+                }, status=400)
+
+            flota = models.FlotaSeguro(cantidad=cantidad)
+            flota.save()
+            for auto in request.data.get("autos"):
                 auto_flota_form = forms.AutoFlotaSeguroForm(auto)
                 if not auto_flota_form.is_valid():
                     messages.error(request, "Datos de seguro de auto de flota invalidos")
-                    return redirect("/")
+                    return Response(data={
+                        "status": "error",
+                        "message": "Datos de seguro de auto de flota invalidos"
+                    }, status=400)
                 
                 auto_flota = auto_flota_form.save(commit=False)
-                auto_flota.flota = obj
+                auto_flota.flota = flota
                 auto_flota.save()
-                obj.save()
+
+            myuuid = uuid.uuid4()
+            request.session["uuid"] = str(myuuid)
+            user_seguro = models.UserSeguro(
+                tipo=tipo,
+                uuid=myuuid,
+                data_id=int(flota.pk),
+                completed=False,
+            )
+            user_seguro.save()
+            return Response(data={
+                "status": "success",
+                "message": "Flota creada"
+            }, status=200)
+
         elif tipo == "bici":
             tipo_bici = request.POST.get("tipo-bici")
             if tipo_bici in ["bici","monopatin"]:
@@ -114,7 +166,6 @@ def guardar_seguro(request):
             "account_form": forms.AccountForm(),
         })
         
-    return redirect("/") 
 
 
 def guardar_account(request):

@@ -3,6 +3,11 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 # Create your models here.
 
+
+class Terms(models.Model):
+    terms = models.TextField(blank=True, null=True)
+    updated = models.DateTimeField(auto_now=True)
+
 class Account(models.Model):
     cod_postal          = models.CharField(max_length=20)
     nombre              = models.CharField(max_length=250)
@@ -21,6 +26,7 @@ class UserSeguro(models.Model):
     data_id     = models.IntegerField()
     account     = models.ForeignKey(Account, null=True, on_delete=models.CASCADE)
     completed   = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
 
 USOS = (
     ("P","Personal"),

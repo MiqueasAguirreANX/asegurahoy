@@ -10,7 +10,39 @@
         <form tipo="{{tipo}}" id="data-form" method="POST" action="{% url 'seguros:guardar-seguro' %}?tipo={{tipo}}">
             {% csrf_token %}
             <div class="form-container">
-                {% if tipo == "bici" %}
+                {% if tipo == "celular" %}
+                <div class="celular-container">
+                    <p>¡El seguro mas elegido por la gente!</p>
+                    <br>
+                    <div class="text-primary">
+                        CONTRATA TU PLAN DE PROTECCIÓN
+                    </div>
+                    <div class="tilde-list">
+                        <div class="tilde">
+                            <img src="{% static 'icons/tilde.svg' %}" alt="tilde">
+                            <div>Contra Robo</div>
+                        </div>
+                        <div class="tilde">
+                            <img src="{% static 'icons/tilde.svg' %}" alt="tilde">
+                            <div>Contra Daño</div>
+                        </div>
+                        <div class="tilde">
+                            <img src="{% static 'icons/tilde.svg' %}" alt="tilde">
+                            <div>Pantalla Protegida</div>
+                        </div>
+                    </div>
+                    <br>
+                    <a  href="https://www.segurocell.com/?pid=817c99c4861918e518dca75d712983eb" 
+                        class="bg-primary"
+                        style="
+                        cursor: pointer;
+                        text-decoration: none;
+                        "
+                        >Cotizar
+                    </a>
+                </div>
+                
+                {% elif tipo == "bici" %}
                     <div class="form-elem">
                         <label>Tipo</label>
                         <select name="tipo-bici" id="bici-select">
@@ -31,17 +63,41 @@
                         {{fm}}
                     </div>
                     {% endfor %}
-                    
-                {% endif %}
-                {% for fm in form %}
-                    <div class="form-elem">
-                        <label>{{fm.label}}</label>
-                        {{fm}}
+                        
+                    <div class="form-button">
+                        <button>Siguiente</button>
                     </div>
-                {% endfor %}
-                
+                    
+                {% elif tipo == "flota" %}
+                    {% for fm in form %}
+                        <div class="form-elem cantidad-elem">
+                            <label>{{fm.label}}</label>
+                            {{fm}}
+                        </div>
+                    {% endfor %}
+                        {% for fm in auto_form %}
+                        <div class="form-elem auto-elem">
+                            <label>{{fm.label}}</label>
+                            {{fm}}
+                        </div>
+                    {% endfor %}
+                    
+                    <div class="form-button">
+                        <button>Siguiente</button>
+                    </div>
+                {% else %}
+                    {% for fm in form %}
+                        <div class="form-elem">
+                            <label>{{fm.label}}</label>
+                            {{fm}}
+                        </div>
+                    {% endfor %}
+                    <div class="form-button">
+                        <button>Siguiente</button>
+                    </div>
+                {% endif %}
             </div>
-            <button>Siguiente</button>
+            
         </form>
         <div class="image-container">
             <div class="image-text">

@@ -46,7 +46,7 @@ function createOption(val, label) {
     return option;
 }
 
-window.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', (event) => {
     let dataForm = document.getElementById("data-form")
     const tipo = dataForm.getAttribute("tipo")
     let marcaSelect = document.getElementById("id_marca")

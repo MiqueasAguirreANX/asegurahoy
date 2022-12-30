@@ -10,9 +10,16 @@
         <form tipo="{{tipo}}" id="account-form" method="POST" action="{% url 'seguros:guardar-account' %}">
             {% csrf_token %}
             <div class="form-container">
-                {{ account_form.as_div }}
+                {% for fm in account_form %}
+                    <div class="form-elem">
+                        <label>{{fm.label}}</label>
+                        {{fm}}
+                    </div>
+                {% endfor %}
+                <div class="form-button">
+                    <button>Siguiente</button>
+                </div>
             </div>
-            <button>Siguiente</button>
         </form>
         <div class="image-container">
             <div class="image-text">
