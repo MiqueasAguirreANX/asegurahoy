@@ -191,9 +191,15 @@ def guardar_account(request):
         user_seguro.completed = True
         user_seguro.save()
         messages.success(request, "Seguro Creado")
-        return redirect("/")
+        return redirect("/success/?tipo="+str(tipo))
 
     return redirect("/")
+
+
+def success(request):
+    return render(request, "seguros/success-user.html", {
+        "tipo": request.GET.get("tipo", "auto")
+    })
 
 
 class GetModeloByMarca(APIView):

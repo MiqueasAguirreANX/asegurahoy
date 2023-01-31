@@ -13,19 +13,30 @@
         background-color: var(--primary);
         color: white;
         /* transform: translateY(-45px); */
+        height: 33px;
         border: none;
     }
-    
 </style>
 {% endblock %}
 
 {% block main %}
     <div class="success-user-container">
-        <div class="form-container">
+        <div class="form">
             <form>
-                <h2>¡Gracias por contactarnos!</h2>
-                <p>En breve, un asesor se comunicará con usted</p>
-                <a href="/">Finalizar</a>
+                <div class="form-container"
+                    style="
+                    grid-template-columns: 1fr!important;
+                    grid-auto-rows: 60px;
+                    grid-column-gap: 20px;
+                    grid-row-gap: 10px;
+                    padding: 30px;
+                    height: 100%;
+                    ">
+                    <h2>¡Gracias por contactarnos!</h2>
+                    <p>En breve, un asesor se comunicará con usted</p>
+                    <a href="/">Finalizar</a>
+                </div>
+                
             </form>
             <div class="image-container">
                 <div class="image-text">
