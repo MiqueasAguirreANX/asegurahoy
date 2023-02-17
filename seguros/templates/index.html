@@ -15,6 +15,9 @@
         <link rel="stylesheet" href="{% static 'css/second-page.css' %}">
         <link rel="stylesheet" href="{% static 'css/third-page.css' %}">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Chenla&family=Copse&family=Crete+Round&family=Crimson+Pro:wght@300&family=Crimson+Text:wght@400;600&family=Days+One&family=Inter+Tight:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
         {% block css %}
         {% endblock %}
         <title>AseguroHoy.com</title>
@@ -49,7 +52,7 @@
         <div class="sides second-page">
             <div class="left">
                 <div class="top-title">
-                    ¿Porque elegirnos?
+                    ¿Por qué elegirnos?
                 </div>
                 <p>
                     Contamos con la más alta tecnología para mantener tu seguro al día.
@@ -90,9 +93,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="white-third-page-separator">
-            <img src="{% static 'icons/LOGO PNG.png' %}" alt="logo">
         </div>
         <div class="sides third-page">
             <div class="left">
@@ -174,7 +174,10 @@
                         <img src="{% static 'icons/LogoSSN.png' %}" alt="SSN">
 
                         <div class="bottom-terms">
-                            <p>AseguraHoy.com &copy; 2022 Todos los derechos reservados</p>
+                            <p>
+                                AseguraHoy.com &copy; 2022 <br>
+                                Todos los derechos reservados
+                            </p>
                             <p>
                                 <a href="{% url 'seguros:terms' %}">Términos y Condiciones</a>
                                 <a href="{% url 'seguros:privacidad' %}">Privacidad</a>

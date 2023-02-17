@@ -27,7 +27,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    padding: 40px;
+    padding: 20px;
     background-color: white;
 }
 
@@ -42,6 +42,7 @@
     align-items: start;
     text-align: left;
     padding: 20px;
+    padding-top: 0px!important;
 }
 
 .sides {
@@ -75,23 +76,28 @@
 .sides > div .top-title {
     color: var(--primary);
     display: block;
-    font-family: 'Days One';
-    font-size: 36px;
-    font-weight: 700;
+    font-family: 'Days One', sans-serif;
+    font-style: normal;
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 400;
     text-align: left;
     width: 100%;
     margin-bottom: 15px;
 }
 
 .second-page .list-number {
-    font-weight: 900;
-    font-family: 'Aoboshi One';
+    font-weight: 800!important;
+    font-family: 'Poppins', sans-serif;
 }
 .second-page > .left > div > div:last-of-type {
     margin-left: 20px;
     margin-bottom: 5px;
 }
-
+.second-page .left p {
+    font-weight: 300;
+    font-family: 'Chenla', cursive;
+}
 .sides .right > div > div:nth-of-type(2) {
     margin-left: 10px;
     margin-top: 10px;
@@ -128,14 +134,14 @@
 }
 
 .third-page .right p {
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 600;
     font-family: 'Crimson Pro';
 }
 
 .third-page .right .top-title {
     font-family: 'Days One';
-    font-weight: 900;
+    font-weight: 500;
     color: black;
 }
 
@@ -200,7 +206,13 @@
 }
 
 .info-side {
+    font-family: 'Crete Round';
+    font-style: normal;
+    font-weight: 600;
     font-size: 11px!important;
+    line-height: 13px;
+
+    color: #000000;
     padding: 30px;
     border-left: 5px solid var(--primary);
     border-right: 5px solid var(--primary);
@@ -227,6 +239,15 @@
     padding: 0px 15px;
 }
 
+.qr-side .qr > div > p {
+    font-family: 'Crete Round';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    padding-bottom: 5px;
+}
+
 .qr-side .qr img {
     width: 100px;
 }
@@ -235,6 +256,14 @@
     font-size: 12px;
     text-decoration: none;
     color: gray;
+}
+
+.qr-side .qr .bottom-terms > p {
+    font-family: 'Crimson Text';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
 }
 
 .qr-side .qr .bottom-terms a {
@@ -252,7 +281,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
-    padding: 20px;
+    padding: 10px;
 }
 .white-third-page-separator img {
     width: 32px;
@@ -281,4 +310,9 @@
     .qr-side .qr img {
         width: 128px;
     }
+}
+
+.third-page .top-title {
+    font-size: 27px!important;
+    font-weight: 300!important;
 }

@@ -1,15 +1,13 @@
 
-form input, form select {
+form input, form select, form label {
+    outline: none;
     font-family: 'Corbel';
     font-style: normal;
-    font-weight: 400;
-    outline: none;
-}
-
-form label {
-    font-family: 'Days One';
-    font-style: normal;
-    font-weight: 800;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #067B7F;
+    mix-blend-mode: normal;
 }
 
 #data-form {
@@ -68,18 +66,19 @@ form button {
     justify-content: center;
 }
 
+
 .form-container {
     background-color: white;
     box-shadow: 0px 7px 5px 1px rgba(161, 161, 161, 0.74);
-    border-radius: 20px;
-    border-top-right-radius: 90px;
+    border-radius: 15px;
+    border-top-right-radius: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     /* grid-template-rows: minmax(100px, 125px); */
     grid-auto-rows: 60px;
     grid-column-gap: 20px;
     grid-row-gap: 10px;
-    padding: 30px;
+    padding: 15px;
     height: 100%;
     /* max-width: 650px; */
     place-self: flex-end;
@@ -97,7 +96,6 @@ form button {
     width: 100%;
     display: block;
 }
-
 
 
 .form-container .form-elem input,
@@ -283,7 +281,7 @@ form button {
     grid-column-end: span 2!important;
 }
 
-@media screen and (max-width: 767px) {
+@media (max-width: 620px) {
     .form-container {
         grid-template-columns: 1fr;
     }
@@ -297,8 +295,20 @@ form button {
     .form-container .form-elem:has(#id_año) {
         width: 100%!important;
     }
+
+    .image-container {
+        margin-left: 0px;
+        margin-top: 15px;
+        padding: 20px 5px!important;
+    }
     .form {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    #data-form {
+        width: -webkit-fill-available;
     }
     .sides {
         grid-template-columns: 1fr!important;
@@ -310,7 +320,7 @@ form button {
     }
 }
 
-@media screen and (min-width: 768px) and (max-width: 890px) {
+@media (min-width: 768px) and (max-width: 890px) {
     .image-container {
         max-width: 300px;
     }

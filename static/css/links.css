@@ -1,5 +1,5 @@
 .navbar .links {
-    padding: 10px 0px;
+    padding: 15px 0px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -12,20 +12,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     text-decoration: none;
     color: black;
-    max-width: 75px;
-    margin: 0px 5px;
-    height: 100%;
+    max-width: 100px;
+    width: 100px!important;
+    margin: 0px 10px;
+    height: 100px;
     transition: all 500ms ease;
 }
 
-@media screen and (max-width: 767px) {
+@media (max-width: 1400px) {
     .navbar .links {
         display: flex;
         flex-direction: row;
-        align-items: center;
+        align-items: flex-start;
         justify-content: flex-start;
         overflow-x: scroll;
     }
@@ -33,12 +34,18 @@
 
 .navbar .links a > span {
     font-family: 'Swis721 Blk BT';
-    font-style: normal;
-    font-weight: 600;
+    font-family: Swis721 Blk BT;
     font-size: 15px;
+    font-weight: 800;
+    line-height: 18px;
+    letter-spacing: 0em;
+    color: gray;   
     text-align: center;
-    color: gray;
-    
+}
+
+.navbar .links a > span:first-of-type {
+    height: 50px;
+    width: 60px!important;
 }
 
 .navbar .links a:hover {
@@ -46,6 +53,6 @@
 }
 
 .navbar .links a span > img {
-    width: 58px;
-    height: 48px;
+    width: 58px!important;
+    height: 48px!important;
 }
