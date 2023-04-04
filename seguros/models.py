@@ -21,7 +21,7 @@ class Account(models.Model):
     email               = models.EmailField(unique=True)
     medio_cotizacion    = models.CharField(max_length=50, choices=[
         ("WP","WhatsApp"),
-        ("LL","LLamado")
+        ("LL","Llamado")
     ])
 
 class UserSeguro(models.Model):
@@ -33,7 +33,7 @@ class UserSeguro(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
 USOS = (
-    ("P","Personal"),
+    ("P","Particular"),
     ("C","Comercial"),
 )
 

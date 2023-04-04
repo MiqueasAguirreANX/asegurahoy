@@ -22,19 +22,19 @@
 {% block main %}
     <div class="success-user-container">
         <div class="form">
-            <form>
+            <form id="success-user">
                 <div class="form-container"
                     style="
-                    grid-template-columns: 1fr!important;
-                    grid-auto-rows: 60px;
-                    grid-column-gap: 20px;
-                    grid-row-gap: 10px;
+                    display: flex!important;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: start;
                     padding: 30px;
                     height: 100%;
                     ">
-                    <h2>¡Gracias por contactarnos!</h2>
-                    <p>En breve, un asesor se comunicará con usted</p>
-                    <a href="/">Finalizar</a>
+                    <h2 class="top-title">¡Gracias por contactarnos!</h2>
+                    <p style="align-self: flex-start; margin-bottom: 20px;margin-top: 20px; margin-right: 30px;">En breve, un asesor se comunicará con usted.</p>
+                    <a class="button" href="/">Finalizar</a>
                 </div>
                 
             </form>

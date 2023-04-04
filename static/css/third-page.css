@@ -86,6 +86,12 @@
     margin-bottom: 15px;
 }
 
+.second-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: white;
+}
+
 .second-page .list-number {
     font-weight: 800!important;
     font-family: 'Poppins', sans-serif;
@@ -94,10 +100,19 @@
     margin-left: 20px;
     margin-bottom: 5px;
 }
-.second-page .left p {
-    font-weight: 300;
-    font-family: 'Chenla', cursive;
+
+.second-page > .right > div > div:last-of-type {
+    margin-left: 20px;
+    margin-bottom: 5px;
 }
+
+.second-page > .right > div {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+}
+
 .sides .right > div > div:nth-of-type(2) {
     margin-left: 10px;
     margin-top: 10px;
@@ -120,17 +135,15 @@
 .third-page {
     display: grid;
     grid-template-columns: 1fr 1fr!important;
+    background-color: white;
 }
 
 .third-page .left .top-title:first-of-type {
     margin-bottom: 30px;
 }
 
-.third-page .right {
-    padding: 15px;
-    margin-top: 70px;
-    font-size: 18px;
-    border-left: 5px solid var(--primary);
+.third-page .right .top-title {
+    margin-bottom: 20px;
 }
 
 .third-page .right p {
@@ -152,7 +165,7 @@
 .three-sides {
     display: grid;
     grid-template-columns: 1fr 1.5fr 1fr;
-    background-color: white;
+    background-color: var(--background-gray);
     padding: 30px;
 }
 .three-sides div  {
@@ -206,11 +219,18 @@
 }
 
 .info-side {
-    font-family: 'Crete Round';
+    /* font-family: 'Crete Round';
     font-style: normal;
     font-weight: 600;
     font-size: 11px!important;
-    line-height: 13px;
+    line-height: 13px; */
+
+    font-family: 'Crete Round';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    padding-bottom: 5px;
 
     color: #000000;
     padding: 30px;
@@ -219,7 +239,12 @@
 }
 
 .info-side a {
-    font-size: 14px;
+    font-family: 'Crete Round';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    padding-bottom: 5px;
     text-decoration: none;
     color: black;
     cursor: pointer;

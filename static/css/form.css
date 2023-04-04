@@ -30,30 +30,11 @@ form input, form select, form label {
     border: none;
 }
 
-#account-form .form-container {
+/* #account-form .form-container {
     grid-template-columns: 1fr 1fr!important;
-}
+} */
 
-#account-form .form-container .form-elem {
-    grid-column-start: auto;
-    grid-column-end: span 2;
-}
 
-#account-form button {
-    width: 130px;
-    margin-left: calc(100% - 150px);
-    padding: 5px 10px;
-    font-size: 14px;
-    border-radius: 15px;
-    background-color: var(--primary);
-    grid-column-start: 1!important;
-    grid-column-end: 4 span!important;
-    /* place-self: end; */
-    /* height: 40px; */
-    color: white;
-    /* transform: translateY(-45px); */
-    border: none;
-}
 
 form button {
     align-self: end;
@@ -127,7 +108,7 @@ form button {
     grid-column: 3/ span 2;
 }
 
-#id_gnc {
+/* #id_gnc {
     width: 30px;
     align-self: flex-start;
     transform: translateY(5px);
@@ -139,7 +120,7 @@ form button {
     align-self: flex-start;
     transform: translateY(5px);
     height: 20px;
-}
+} */
 
 #form-moto .form-container .form-elem:first-of-type {
     grid-column: 1/ span 2;
@@ -154,6 +135,8 @@ form button {
     grid-column-start: auto;
     grid-column-end: span 2;
 }
+
+
 
 .form-container .form-elem:has(#id_año) {
     width: calc(100% - 50px);
@@ -338,6 +321,7 @@ form button {
     grid-template-columns: 1fr!important;
     grid-auto-rows: auto;
 }
+
 .celular-container {
     width: 100%;
     display: flex;
@@ -377,4 +361,78 @@ form button {
     padding: 5px 15px;
     border-radius: 5px;
     border: none;
+}
+
+#account-form .form-container .form-elem {
+    grid-column-start: auto;
+    grid-column-end: span 2;
+}
+
+#account-form button {
+    width: 130px;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 15px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    align-self: center;
+}
+
+#success-user .button {
+    width: 130px;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 15px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    align-self: center;
+}
+
+.form #account-form .form-container .form-elem:first-of-type {
+    grid-column: 1 / span 4!important;
+}
+
+.form #account-form .form-container .form-elem:nth-of-type(2) {
+    grid-column: 1 / span 2!important;
+}
+
+.form #account-form .form-container .form-elem:nth-of-type(3) {
+    grid-column: 3 / span 2!important;
+}
+
+.form #account-form .form-container .form-elem:nth-of-type(4) {
+    grid-column: 1 / span 2!important;
+}
+
+.form #account-form .form-container .form-elem:nth-of-type(5) {
+    grid-column: 3 / span 2!important;
+}
+
+.form #account-form .form-container .form-elem:nth-of-type(6) {
+    grid-column: 1 / span 4!important;
+}
+
+.form #account-form .form-container .form-elem:nth-of-type(7) {
+    grid-column: 1 / span 2!important;
+}
+
+.form #account-form .form-container .form-elem:nth-of-type(7) #id_medio_cotizacion {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.form #account-form .form-container .form-elem:nth-of-type(7) #id_medio_cotizacion > div {
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+.form #account-form .form-container .form-button {
+    grid-column: 3 / span 2!important;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: end;
 }

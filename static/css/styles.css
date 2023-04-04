@@ -2,6 +2,7 @@
     --primary: #067B7F;
     --gray-form-input: #D9D9D9;
     --background-gray: #EEEEEE;
+    --top-title-color:  #004AAD;
 }
 
 main {
@@ -46,4 +47,15 @@ body {
 
 form button {
     cursor: pointer;
+}
+
+.top-title {
+    /* font-size: 27px!important;
+    font-weight: 300!important; */
+    font-family: 'Days One', sans-serif;
+    color: var(--top-title-color)!important;
+    font-style: normal;
+    font-size: 25px;
+    line-height: 36px;
+    font-weight: 400;
 }
