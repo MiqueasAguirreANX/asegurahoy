@@ -73,28 +73,27 @@ LINDEROS = (
 )
 
 TIPOS_BICI_HOGAR = (
-    ("RDYF", "Robo dentro y fuera del domicilio"),
     ("NO", "No agrego bicicleta"),
-    ("AMBOS", "Cotizar ambos presupuestos"),
+    ("SI", "Si, dentro y fuera del domicilio"),
 )
 
 class HogarSeguro(models.Model):
     construccion        = models.CharField(max_length=250)
     material_techo      = models.CharField(max_length=250)
-    m2                  = models.IntegerField()
-    valor               = models.FloatField()
+    m2                  = models.IntegerField(default=0)
+    valor               = models.FloatField(default=0)
     rejas               = models.CharField(max_length=250)
     linderos            = models.CharField(max_length=25, choices=LINDEROS)
     tipo_bici           = models.CharField(max_length=40, choices=TIPOS_BICI_HOGAR)
-    marca_modelo_bici   = models.CharField(max_length=250)
-    valor_bici          = models.FloatField()
+    marca_modelo_bici   = models.CharField(max_length=250, default="")
+    valor_bici          = models.FloatField(default=0)
 
 class ComercioSeguro(models.Model):
     descripcion     = models.CharField(max_length=250)
     construccion    = models.CharField(max_length=250)
     material_techo  = models.CharField(max_length=250)
-    m2              = models.IntegerField()
-    valor           = models.FloatField()
+    m2              = models.IntegerField(default=0)
+    valor           = models.FloatField(default=0)
     rejas           = models.CharField(max_length=250)
     linderos        = models.CharField(max_length=25, choices=LINDEROS)
 

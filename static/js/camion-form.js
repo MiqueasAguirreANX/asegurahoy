@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         val.style.display = "none"
     })
     acopladoCheck.onchange = (event) => {
-        if (acopladoCheck.checked) {
+        if (event.target.value === "Si") {
             acopladoDataChecks.forEach((val) => {
                 val.style.display = "flex"
             })
