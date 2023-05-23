@@ -195,6 +195,16 @@ class BiciSeguroForm(forms.ModelForm):
 
 class MonopatinSeguroForm(forms.ModelForm):
     año = forms.ChoiceField(choices=[(x, str(x)) for x in range(2023, 2016, -1)])
+    marca_modelo = forms.CharField(label="Marca y Modelo")
+    tipo = forms.ChoiceField(
+        label="Tipo",
+        choices=(
+            ("B","Bateria"),
+            ("E","Electrico"),
+        ),
+        initial="B"
+    )
+    valor = forms.FloatField(label="Valor en pesos", min_value=0, initial=0)
 
     def __init__(self, *args, **kwargs):
         super(MonopatinSeguroForm, self).__init__(*args, **kwargs)
@@ -223,6 +233,11 @@ class CamionSeguroForm(forms.ModelForm):
         ("U","Urbano"),
         ("N","Nacional"),
     ])
+    marca_modelo_acoplado = forms.CharField(label="Marca y Modelo")
+    año_acoplado = forms.ChoiceField(
+        label="Año",
+        choices=[(x, str(x)) for x in range(2023, 1952, -1)]
+    )
 
     def __init__(self, *args, **kwargs):
         super(CamionSeguroForm, self).__init__(*args, **kwargs)
@@ -293,6 +308,8 @@ class PraxisMedicaSeguroForm(forms.ModelForm):
         fields = "__all__"
 
 class CaucionSeguroForm(forms.ModelForm):
+    descripcion = forms.CharField(label="Descripción")
+
     class Meta:
         model = models.CaucionSeguro
         fields = "__all__"

@@ -3,7 +3,7 @@ function fillModeloSelect(marca, modelosURL, versionURL)  {
     while (modeloSelect.firstChild) {
         modeloSelect.removeChild(modeloSelect.firstChild);
     }
-    modeloSelect.appendChild(createOption("OTRO", "OTRO"))
+    modeloSelect.appendChild(createOption("-", "-"))
 
     
 
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         while (modeloSelect.firstChild) {
             modeloSelect.removeChild(modeloSelect.firstChild);
         }
-        modeloSelect.appendChild(createOption("OTRO", "OTRO"))
+        modeloSelect.appendChild(createOption("-", "-"))
         let versionSelect = document.getElementById("id_version")
         while (versionSelect.firstChild) {
             versionSelect.removeChild(versionSelect.firstChild);

@@ -24,6 +24,9 @@ class Account(models.Model):
         ("LL","Llamado")
     ])
 
+    def __str__(self):
+        return f"{self.nombre} {self.apellido}"
+
 class UserSeguro(models.Model):
     tipo        = models.CharField(max_length=250)
     uuid        = models.CharField(max_length=200, unique=True)
@@ -31,6 +34,17 @@ class UserSeguro(models.Model):
     account     = models.ForeignKey(Account, null=True, on_delete=models.CASCADE)
     completed   = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Seguro {self.id} / Cliente {self.account}"
+
+
+class UserSeguroInfo(UserSeguro):
+    class Meta:
+        proxy = True
+        verbose_name = 'User Seguro Info'
+        verbose_name_plural = 'Users Seguro Info'
+
 
 USOS = (
     ("P","Particular"),

@@ -59,7 +59,6 @@ def tipo_form(request):
         context["tipo"] = tipo
         context["account_form"] = forms.AccountForm
         context["form"] = TIPO_FORM_MAP[tipo]
-        context["auto_form"] = forms.AutoSeguroForm
     else:
         context["tipo"] = tipo
         context["account_form"] = forms.AccountForm
@@ -86,55 +85,7 @@ class GuardarSeguro(APIView):
 
         request.session["tipo"] = tipo
         print(tipo)
-        if tipo == "flota":
-            print(request.data)
-            cantidad = request.data.get("cantidad")
-            try:
-                cantidad = int(cantidad)
-            except Exception as err:
-                messages.error(request, str(err))
-                return Response(data={
-                    "status": "error",
-                    "message": str(err)
-                }, status=400)
-
-            if cantidad < 1:
-                messages.error(request, "Cantidad de flota invalida")
-                return Response(data={
-                    "status": "error",
-                    "message": "Cantidad de flota invalida"
-                }, status=400)
-
-            flota = models.FlotaSeguro(cantidad=cantidad)
-            flota.save()
-            for auto in request.data.get("autos"):
-                auto_flota_form = forms.AutoFlotaSeguroForm(auto)
-                if not auto_flota_form.is_valid():
-                    messages.error(request, "Datos de seguro de auto de flota invalidos")
-                    return Response(data={
-                        "status": "error",
-                        "message": "Datos de seguro de auto de flota invalidos"
-                    }, status=400)
-                
-                auto_flota = auto_flota_form.save(commit=False)
-                auto_flota.flota = flota
-                auto_flota.save()
-
-            myuuid = uuid.uuid4()
-            request.session["uuid"] = str(myuuid)
-            user_seguro = models.UserSeguro(
-                tipo=tipo,
-                uuid=myuuid,
-                data_id=int(flota.pk),
-                completed=False,
-            )
-            user_seguro.save()
-            return Response(data={
-                "status": "success",
-                "message": "Flota creada"
-            }, status=200)
-
-        elif tipo == "bici":
+        if tipo == "bici":
             tipo_bici = request.POST.get("tipo-bici")
             if tipo_bici in ["bici","monopatin"]:
                 form = TIPO_FORM_MAP[tipo_bici]

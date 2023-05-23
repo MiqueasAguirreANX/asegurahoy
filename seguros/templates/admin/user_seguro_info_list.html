@@ -1,0 +1,90 @@
+{% extends "admin/change_list.html" %}
+
+{% block content_title %}
+    <h1> Usuarios seguros info </h1>
+{% endblock %}
+
+{% block result_list %}
+
+<div class="results">
+    <table>
+
+    <thead>
+      <tr>
+        <th>
+            <div class="text">
+              <a href="#">ID</a>
+            </div>
+          </th>
+        <th>
+          <div class="text">
+            <a href="#">Tipo</a>
+          </div>
+        </th>
+        <th>
+          <div class="text">
+            <a href="#">Fecha</a>
+          </div>
+        </th>
+        <th>
+          <div class="text">
+            <a href="#">Nombre</a>
+          </div>
+        </th>
+        <th>
+            <div class="text">
+              <a href="#">Apellido</a>
+            </div>
+        </th>
+        <th>
+            <div class="text">
+              <a href="#">Codigo</a>
+            </div>
+        </th>
+        <th>
+            <div class="text">
+              <a href="#">Telefono</a>
+            </div>
+        </th>
+        <th>
+            <div class="text">
+              <a href="#">Email</a>
+            </div>
+        </th>
+        <th>
+          <div class="text">
+            <a href="#">Medio</a>
+          </div>
+        </th>
+        <th>
+          <div class="text">
+            <a href="#">Datos</a>
+          </div>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for row in data %}
+      <tr class="{% cycle 'row1' 'row2' %}">
+        <td> {{ row.id }} </td>
+        <td> {{ row.tipo }} </td>
+        <td> {{ row.fecha }} </td>
+        <td> {{ row.nombre }} </td>
+        <td> {{ row.apellido }} </td>
+        <td> {{ row.codigo }} </td>
+        <td> {{ row.telefono }} </td>
+        <td> {{ row.email }} </td>
+        <td> {{ row.medio }} </td>
+        <td> <a href="{{row.datos}}">Ver</a> </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+
+  </table>
+</div>
+
+
+{% endblock %}
+
+{% block pagination %}{% endblock %}

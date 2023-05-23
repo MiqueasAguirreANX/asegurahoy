@@ -23,3 +23,40 @@ admin.site.register(models.VidaSeguro)
 
 admin.site.register(models.Terms)
 admin.site.register(models.Privacidad)
+
+@admin.register(models.UserSeguroInfo)
+class UserSeguroInfoAdmin(admin.ModelAdmin):
+    change_list_template = 'admin/user_seguro_info_list.html'
+    # date_hierarchy = 'created_at'
+
+    def changelist_view(self, request, extra_context=None):
+        response = super().changelist_view(
+            request,
+            extra_context=extra_context,
+        )
+
+        try:
+            qs = response.context_data['cl'].queryset
+            qs = qs.exclude(account__isnull=True)
+        except (AttributeError, KeyError):
+            return response
+
+        data = []
+
+        for elem in qs:
+            data.append({
+                "id": elem.id,
+                "tipo": elem.tipo,
+                "fecha": elem.created_at.strftime("%H:%M %d/%m/%Y"),
+                "nombre": elem.account.nombre,
+                "apellido": elem.account.apellido,
+                "codigo": elem.account.cod_area,
+                "telefono": elem.account.telefono,
+                "email": elem.account.email,
+                "medio": elem.account.medio_cotizacion,
+                "datos": f'/admin/seguros/{elem.tipo.replace("_", "")}seguro/{elem.data_id}/change'
+            })
+
+        response.context_data['data'] = data
+
+        return response
