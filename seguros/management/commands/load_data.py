@@ -8,11 +8,11 @@ from django.conf import settings
 
 
 class Command(BaseCommand):
-    help = "Load Excel Data into the database"
+    help = "Load Data into the database"
 
     def handle(self, *args, **options):
         try:
-            self.stdout.write("Loading Excel Data")
+            self.stdout.write("Loading Data")
             import json
 
             files = [
